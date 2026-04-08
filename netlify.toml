@@ -1,0 +1,25 @@
+# ═══════════════════════════════════════════
+# Arrow Architect — Netlify Configuration
+# ═══════════════════════════════════════════
+
+[build]
+  publish = "."
+
+# Enable Netlify Identity for CMS login
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+# Redirect /admin to the CMS
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
