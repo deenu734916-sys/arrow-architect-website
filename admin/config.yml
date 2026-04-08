@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+
+collections:
+  - name: "projects"
+    label: "Portfolio Projects"
+    folder: "projects"
+    create: true
+    fields:
+      - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["residential", "commercial", "interior"]}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  - name: "services"
+    label: "Services"
+    folder: "services"
+    create: true
+    fields:
+      - {label: "Service Name", name: "title", widget: "string"}
+      - {label: "Description", name: "body", widget: "text"}
